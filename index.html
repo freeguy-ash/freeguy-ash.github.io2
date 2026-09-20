@@ -1,1 +1,215 @@
-hi
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ashwin V| Portfolio</title>
+  <meta name="description" content="Ashwin V: AI &amp; Data Science student, Python developer, and Linux enthusiast building intelligent tools and systems.">
+  <meta name="author" content="Ashwin V">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#0F1419">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Ashwin V | Portfolio">
+  <meta property="og:description" content="AI &amp; Data Science student building things with Python, Linux, and curiosity.">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230F1419'/%3E%3Ctext x='4' y='22' font-family='monospace' font-size='17' font-weight='700' fill='%237CB7FF'%3E%3E_%3C/text%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300..800&display=swap" rel="stylesheet">
+
+  <!-- Set the theme before first paint to avoid a flash -->
+  <script>
+    (function () {
+      var t;
+      try { t = localStorage.getItem('theme'); } catch (e) {}
+      document.documentElement.dataset.theme = (t === 'light' || t === 'dark') ? t : 'dark';
+    })();
+  </script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="water" aria-hidden="true"></canvas>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap bar">
+      <a class="brand" href="#top">ashwin</a>
+      <nav class="nav" aria-label="Primary">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="tools">
+        <button class="tool tool-palette" id="open-palette" type="button" aria-label="Open command palette" aria-keyshortcuts="Control+K Meta+K"><kbd>Ctrl K</kbd></button>
+        <button class="tool" id="theme-toggle" type="button" aria-label="Switch between dark and light theme">
+          <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6.25" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8 1.75a6.25 6.25 0 0 1 0 12.5z" fill="currentColor"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="wrap">
+        <h1>Ashwin V</h1>
+        <p class="lead">AI &amp; Data Science student building intelligent tools and systems with Python, on Linux.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="#projects">See projects</a>
+          <a class="btn" href="#contact">Get in touch</a>
+        </div>
+
+        <div class="term" id="terminal">
+          <div class="term-bar">
+            <span>ashwin@portfolio: ~</span>
+            <span class="muted">type help</span>
+          </div>
+          <div class="term-out" id="term-out" role="log" aria-live="polite" aria-label="Terminal output"></div>
+          <label class="term-in">
+            <span class="prompt" aria-hidden="true">$</span>
+            <span class="sr-only">Terminal command</span>
+            <input id="term-input" type="text" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" enterkeyhint="go">
+          </label>
+          <div class="term-chips" role="group" aria-label="Quick commands">
+            <button class="chip" type="button" data-cmd="help">help</button>
+            <button class="chip" type="button" data-cmd="about">about</button>
+            <button class="chip" type="button" data-cmd="projects">projects</button>
+            <button class="chip" type="button" data-cmd="skills">skills</button>
+            <button class="chip" type="button" data-cmd="contact">contact</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section class="section" id="about">
+      <div class="wrap section-grid">
+        <h2>About</h2>
+        <div>
+          <div class="about-text">
+            <p>I'm an AI &amp; Data Science student who likes turning messy data into tools people can actually use. Most of my work is in Python, and nearly all of it happens on Linux.</p>
+            <p>I learn by building. A project usually starts as a question, becomes a notebook, and, if it proves useful, ends up as a small command-line tool or app.</p>
+          </div>
+          <dl class="facts">
+            <div><dt>Studying</dt><dd>AI &amp; Data Science</dd></div>
+            <div><dt>Main language</dt><dd>Python</dd></div>
+            <div><dt>Daily driver</dt><dd>Linux</dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROJECTS ============ -->
+    <!-- Placeholder projects: replace names, descriptions, tags and links with your own. -->
+    <section class="section" id="projects">
+      <div class="wrap section-grid">
+        <h2>Projects</h2>
+        <div>
+          <div class="filter-row">
+            <div class="filter" role="group" aria-label="Filter projects by topic">
+              <button class="chip" type="button" data-filter="all" aria-pressed="true">All</button>
+              <button class="chip" type="button" data-filter="python" aria-pressed="false">Python</button>
+              <button class="chip" type="button" data-filter="ml" aria-pressed="false">ML</button>
+              <button class="chip" type="button" data-filter="data" aria-pressed="false">Data</button>
+              <button class="chip" type="button" data-filter="linux" aria-pressed="false">Linux</button>
+            </div>
+            <p class="muted small" id="project-count" aria-live="polite">4 projects</p>
+          </div>
+
+          <ul class="projects">
+            <li class="project" data-tags="python ml">
+              <div>
+                <h3><a href="https://github.com/your-username/notes-qa">Notes Q&amp;A</a></h3>
+                <p>A local assistant that answers questions from your own notes. Nothing leaves your machine.</p>
+              </div>
+              <ul class="tags"><li>Python</li><li>NLP</li><li>CLI</li></ul>
+            </li>
+            <li class="project" data-tags="linux">
+              <div>
+                <h3><a href="https://github.com/your-username/dotfiles">Dotfiles</a></h3>
+                <p>My shell, editor and window manager setup, with one script that rebuilds it on a fresh install.</p>
+              </div>
+              <ul class="tags"><li>Linux</li><li>Bash</li></ul>
+            </li>
+            <li class="project" data-tags="python data">
+              <div>
+                <h3><a href="https://github.com/your-username/price-tracker">Price Tracker</a></h3>
+                <p>Collects product prices daily, stores the history, and charts when a price is worth acting on.</p>
+              </div>
+              <ul class="tags"><li>Python</li><li>pandas</li><li>SQLite</li></ul>
+            </li>
+            <li class="project" data-tags="ml data">
+              <div>
+                <h3><a href="https://github.com/your-username/churn-model">Churn Model</a></h3>
+                <p>A classification pipeline that predicts which customers will leave, with a notebook that explains each result.</p>
+              </div>
+              <ul class="tags"><li>scikit-learn</li><li>Jupyter</li></ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SKILLS ============ -->
+    <section class="section" id="skills">
+      <div class="wrap section-grid">
+        <h2>Skills</h2>
+        <div>
+          <p class="tree-root">skills/</p>
+          <ul class="tree">
+            <li><span>Languages</span>
+              <ul><li>Python</li><li>SQL</li><li>Bash</li><li>JavaScript</li></ul>
+            </li>
+            <li><span>Data &amp; ML</span>
+              <ul><li>NumPy</li><li>pandas</li><li>scikit-learn</li><li>PyTorch</li></ul>
+            </li>
+            <li><span>Tools</span>
+              <ul><li>Linux</li><li>Git</li><li>Jupyter</li></ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="section" id="contact">
+      <div class="wrap section-grid">
+        <h2>Contact</h2>
+        <div>
+          <p class="about-text">Have a question, an idea or a project in mind? Email is the quickest way to reach me.</p>
+          <button class="copy" type="button" data-copy="ashwin080107@gmail.com" aria-label="Copy email address ashwin080107@gmail.com">
+            <span>ashwin080107@gmail.com</span><span class="copy-hint">Copy</span>
+          </button>
+          <ul class="links">
+            <li><a data-contact="Email" href="ashwin080107@gmail.com">ashwin080107@gmail.com</a></li>
+            <li><a data-contact="GitHub" href="https://github.com/freeguy-ash" target="_blank" rel="noopener noreferrer">github.com/freeguy-ash</a></li>
+            <li><a data-contact="LinkedIn" href="www.linkedin.com/in/ashwin-venkatesan-0b73a2423" target="_blank" rel="noopener noreferrer">linkedin.com/in/ashwin venkatesan</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap foot">
+      <p>&copy; <span id="year">2026</span> Ashwin V</p>
+      <p>Set in JetBrains Mono. Built with HTML, CSS and JavaScript.</p>
+    </div>
+  </footer>
+
+  <dialog id="palette" aria-label="Command palette">
+    <div class="pal-box">
+      <input id="pal-input" type="text" placeholder="Type a command" autocomplete="off" spellcheck="false" role="combobox" aria-expanded="true" aria-controls="pal-list" aria-label="Search commands">
+      <ul id="pal-list" role="listbox" aria-label="Commands"></ul>
+    </div>
+  </dialog>
+
+  <div id="toast" role="status" aria-live="polite"></div>
+
+  <script src="water.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
